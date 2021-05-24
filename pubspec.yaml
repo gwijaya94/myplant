@@ -81,6 +81,20 @@ flutter:
     - family: Staatliches
       fonts:
         - asset: assets/fonts/Staatliches/Staatliches-Regular.ttf
+
+    - family: Mulish-Regular
+      fonts:
+        - asset: assets/fonts/Mulish/Mulish-Regular.ttf
+    - family: Mulish-Bold
+      fonts:
+        - asset: assets/fonts/Mulish/Mulish-Bold.ttf
+
+    - family: OpenSans-Regular
+      fonts:
+        - asset: assets/fonts/OpenSans/OpenSans-Regular.ttf
+    - family: OpenSans-Bold
+      fonts:
+        - asset: assets/fonts/OpenSans/OpenSans-Bold.ttf
   
   #
   # For details regarding fonts from package dependencies,
