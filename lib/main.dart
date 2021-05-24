@@ -49,10 +49,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           child:
                               Icon(Icons.notifications_none_rounded, size: 26)),
                       Padding(
-                          padding: const EdgeInsets.only(bottom: 20),
-                          child: Text('My Plant',
-                              style: fonts.mulishHeadline5,
-                              textAlign: TextAlign.left)),
+                        padding: const EdgeInsets.only(bottom: 20),
+                        child: Text(
+                          'My Plant',
+                          style: fonts.mulishHeadline5,
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
                       Theme(
                         data: ThemeData(
                             primaryColor: colors.silverChalice,
@@ -127,17 +130,22 @@ class RenderPlant extends StatelessWidget {
         crossAxisCount: 2,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
+        shrinkWrap: true,
+        primary: true,
         padding: EdgeInsets.symmetric(
-            horizontal: padHorizontal, vertical: padVertical / 2),
+          horizontal: padHorizontal,
+          vertical: padVertical / 2,
+        ),
+        childAspectRatio: 1 / 2.4,
         children: dataPlant.map((item) {
           return ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Stack(alignment: Alignment.bottomRight, children: [
+            borderRadius: BorderRadius.circular(10),
+            child: Stack(
+              children: [
                 Container(
                   color: colors.whiteSmoke,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
-                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(dataPlant.length.toString(),
                           style: fonts.mulishHeadline5),
@@ -166,17 +174,25 @@ class RenderPlant extends StatelessWidget {
                     ],
                   ),
                 ),
-                ClipRRect(
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(10)),
-                  child: Container(
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: ClipRRect(
+                    borderRadius:
+                        BorderRadius.only(topLeft: Radius.circular(10)),
+                    child: Container(
                       color: Colors.blueAccent,
                       child: IconButton(
-                          splashRadius: 30,
-                          icon: Icon(Icons.add),
-                          onPressed: () {},
-                          color: colors.pureWhite)),
+                        splashRadius: 30,
+                        icon: Icon(Icons.add),
+                        onPressed: () {},
+                        color: colors.pureWhite,
+                      ),
+                    ),
+                  ),
                 )
-              ]));
+              ],
+            ),
+          );
         }).toList());
   }
 }
