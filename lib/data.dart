@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 
 var checkoutData = [];
+var favoriteData = [];
 
 class PlantData {
   String name;
-  String family;
+  String bioName;
   String category;
   String desc;
-  String price;
+  double price;
   String image;
 
   PlantData({
     @required this.name,
-    @required this.family,
+    @required this.bioName,
     @required this.category,
     @required this.desc,
     @required this.price,
@@ -22,54 +23,48 @@ class PlantData {
 
 var itemData = [
   PlantData(
-    name: 'Red Rose',
-    family: 'Rosaceae',
-    category: 'outdoor',
-    desc: '',
-    price: '',
-    image: '',
-  ),
-  PlantData(
-    name: 'White Rose',
-    family: 'Rosaceae',
+    name: 'Asparagus Fern',
+    bioName: 'Asparagus setaceus',
     category: 'indoor',
     desc: '',
-    price: '',
-    image: '',
+    price: 13.99,
+    image: 'chinese-money-plant.png',
   ),
   PlantData(
-    name: 'Blue Rose',
-    family: 'Rosaceae',
+    name: 'Chinese Money Plant',
+    bioName: 'Pilea peperomioides',
     category: 'indoor',
     desc: '',
-    price: '',
-    image: '',
+    price: 10.39,
+    image: 'chinese-money-plant.png',
   ),
   PlantData(
-    name: 'Red Rose',
-    family: 'Rosaceae',
+    name: 'Peace Lily',
+    bioName: 'Spathiphyllum ',
     category: 'indoor',
     desc: '',
-    price: '',
-    image: '',
+    price: 0.00,
+    image: 'chinese-money-plant.png',
   ),
   PlantData(
-    name: 'Red Rose',
-    family: 'Rosaceae',
+    name: 'Dragon Tree',
+    bioName: 'Dracaena marginata',
     category: 'indoor',
     desc: '',
-    price: '',
-    image: '',
+    price: 0.00,
+    image: 'chinese-money-plant.png',
   ),
   PlantData(
-    name: 'Red Rose',
-    family: 'Rosaceae',
+    name: 'Ponytail Palm',
+    bioName: 'Beaucarnea recurvata',
     category: 'indoor',
     desc: '',
-    price: '',
-    image: '',
+    price: 0.00,
+    image: 'chinese-money-plant.png',
   ),
 ];
+
+var plantCategories = ['All', 'Indoor', 'Outdoor'];
 
 List<dynamic> addFilteredData(String category) {
   var arrayTemp = [];
