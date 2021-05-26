@@ -74,7 +74,7 @@ class FavList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: colors.puertoRico,
+      color: colors.whisperWhite,
       elevation: 5,
       margin: EdgeInsets.symmetric(vertical: 5),
       child: InkWell(
@@ -94,8 +94,9 @@ class FavList extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(item.name,
-                            style: fonts.mulishSubtitle1
-                                .merge(TextStyle(fontFamily: 'Mulish-Bold'))),
+                            style: fonts.mulishSubtitle1.merge(TextStyle(
+                              fontFamily: 'Mulish-Bold',
+                            ))),
                         Text(item.bioName,
                             style: fonts.openSansBody2
                                 .merge(TextStyle(fontStyle: FontStyle.italic))),
