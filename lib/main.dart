@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myplant/data.dart';
 import 'package:myplant/detailScreen.dart';
+import 'package:myplant/favScreen.dart';
 import 'package:myplant/utils/fontStyles.dart' as fonts;
 import 'package:myplant/utils/helper.dart';
 import 'package:myplant/utils/myColor.dart' as colors;
@@ -34,15 +35,8 @@ class HomeScreen extends StatelessWidget {
         elevation: 0,
         actions: [
           InkWell(
-            onTap: () => null,
-            child: Icon(Icons.shopping_basket_outlined,
-                size: 26, color: colors.carbonBlack),
-          ),
-          SizedBox(width: 25),
-          InkWell(
-            onTap: () => null,
-            child: Icon(Icons.favorite_border_outlined,
-                size: 26, color: colors.carbonBlack),
+            onTap: () => nextScreen(context, FavoriteScreen()),
+            child: Icon(Icons.eco, size: 40, color: colors.timberGreen),
           ),
           SizedBox(width: 16),
         ],
@@ -110,51 +104,53 @@ class RenderPlant extends StatelessWidget {
         padding: EdgeInsets.symmetric(
             horizontal: padHorizontal, vertical: padVertical / 2),
         children: dataPlant.map((item) {
-          return InkWell(
+          return ClipRRect(
             borderRadius: BorderRadius.circular(10),
-            onTap: () => nextScreen(context, DetailPlant(item: item)),
-            child: Container(
-              color: colors.whisperWhite,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(child: GetImage(imgName: item.image)),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SizedBox(width: 10),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(item.name,
-                                style: fonts.openSansBody2,
-                                overflow: TextOverflow.ellipsis),
-                            Text('USD ${item.price}',
-                                style: fonts.openSansSubhead.merge(TextStyle(
-                                    fontFamily: 'OpenSans-Bold',
-                                    color: colors.silverGrey))),
-                          ],
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.bottomRight,
-                        child: ClipRRect(
-                          borderRadius:
-                              BorderRadius.only(topLeft: Radius.circular(10)),
-                          child: Container(
-                            color: colors.puertoRico,
-                            child: IconButton(
-                                icon: Icon(Icons.add),
-                                color: colors.pureWhite,
-                                onPressed: () => checkoutData.add(item)),
+            child: InkWell(
+              onTap: () => nextScreen(context, DetailPlant(item: item)),
+              child: Container(
+                color: colors.whisperWhite,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(child: GetImage(imgName: item.image)),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(width: 10),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(item.name,
+                                  style: fonts.openSansBody2,
+                                  overflow: TextOverflow.ellipsis),
+                              Text('USD ${item.price.toStringAsFixed(2)}',
+                                  style: fonts.openSansSubhead.merge(TextStyle(
+                                      fontFamily: 'OpenSans-Bold',
+                                      color: colors.silverGrey))),
+                            ],
                           ),
                         ),
-                      )
-                    ],
-                  ),
-                ],
+                        Align(
+                          alignment: Alignment.bottomRight,
+                          child: ClipRRect(
+                            borderRadius:
+                                BorderRadius.only(topLeft: Radius.circular(10)),
+                            child: Container(
+                              color: colors.puertoRico,
+                              child: IconButton(
+                                  icon: Icon(Icons.add),
+                                  color: colors.pureWhite,
+                                  onPressed: () => checkoutData.add(item)),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           );

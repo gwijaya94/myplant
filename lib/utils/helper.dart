@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myplant/utils/fontStyles.dart';
+import 'package:myplant/utils/myColor.dart';
 
 class GetImage extends StatelessWidget {
   final String imgName;
@@ -37,4 +39,13 @@ void nextScreen(BuildContext context, Widget widget) {
 
 void prevScreen(BuildContext context) {
   Navigator.pop(context);
+}
+
+void showSnackBar(BuildContext context,
+    {@required String text, int seconds = 1}) {
+  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+    content: Text(text, style: mulishSubtitle1),
+    duration: Duration(seconds: seconds),
+    backgroundColor: timberGreen,
+  ));
 }
