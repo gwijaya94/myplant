@@ -14,6 +14,8 @@ This Flutter project contains criteria submission from Dicoding's Submission:
 MyPlant still don't use API request. Just UI only.
 
 
+![Image of App Preview](https://cdn.dribbble.com/users/3338084/screenshots/14908750/media/6edd6af6ef4151da97800c52096fa61e.jpg?compress=1&resize=1200x900)
+
 
 <!-- ## Getting Started
 
